@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="shell">
+    <div class="header__inner">
+      <a [routerLink]="" class="logo">
+        <div class="img-container">
+          <img src="../../../../assets/images/logo.png" alt="logo"/>
+        </div>
+      </a>
+
+      <p *ngIf="authService.isAuthenticated()">Welcome USERNAME!</p>
+
+      <nav class="nav">
+        <ul>
+          <li>
+            <a routerLink="/home">Home</a>
+          </li>
+
+          <li *ngIf="!authService.isAuthenticated()">
+            <a routerLink="/register">Register</a>
+          </li>
+
+          <li *ngIf="!authService.isAuthenticated()">
+            <a routerLink="/login">Login</a>
+          </li>
+
+          <li *ngIf="authService.isAdmin()">
+            <a routerLink="/bet/create">Create</a>
+          </li>
+
+          <li *ngIf="authService.isAuthenticated()">
+              <a routerLink="/bet/history">History</a>
+          </li>
+
+          <li *ngIf="authService.isAuthenticated()">
+            <a (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
