@@ -1,0 +1,24 @@
+.home .intro__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 69px);
+  text-align: center;
+  color: #fff;
+}
+
+.home .intro__title {
+  font-size: 48px;
+}
+
+.home .intro__entry {
+  font-size: 24px;
+}
+
+.home .intro--home {
+  background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../../../../assets/images/intro--home.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
