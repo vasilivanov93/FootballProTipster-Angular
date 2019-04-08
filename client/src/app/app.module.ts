@@ -3,22 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/shared/header/header.component';
-import {HttpClientModule} from "@angular/common/http";
-import { FooterComponent } from './components/shared/footer/footer.component';
-import { HomeComponent } from './components/shared/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+
+// Modules
+import {SharedModule} from './components/shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
