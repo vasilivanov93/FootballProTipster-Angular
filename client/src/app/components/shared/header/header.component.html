@@ -12,23 +12,23 @@
       <nav class="nav">
         <ul>
           <li>
-            <a routerLink="/home">Home</a>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
           </li>
 
           <li *ngIf="!authService.isAuthenticated()">
-            <a routerLink="/register">Register</a>
+            <a routerLink="/register" routerLinkActive="active">Register</a>
           </li>
 
           <li *ngIf="!authService.isAuthenticated()">
-            <a routerLink="/login">Login</a>
+            <a routerLink="/login" routerLinkActive="active">Login</a>
           </li>
 
           <li *ngIf="authService.isAdmin()">
-            <a routerLink="/bet/create">Create</a>
+            <a routerLink="/bet/create" routerLinkActive="active">Create</a>
           </li>
 
           <li *ngIf="authService.isAuthenticated()">
-              <a routerLink="/bet/history">History</a>
+              <a routerLink="/bet/history" routerLinkActive="active">History</a>
           </li>
 
           <li *ngIf="authService.isAuthenticated()">
