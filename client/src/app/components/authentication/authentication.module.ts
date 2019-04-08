@@ -9,6 +9,7 @@ import {LoginComponent} from './login/login.component';
 
 // Directives
 import {CheckPasswordDirective} from '../../core/directives/check-password.directive';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {CheckPasswordDirective} from '../../core/directives/check-password.direc
     CommonModule,
     FormsModule,
     RouterModule,
+    HttpClientModule,
     FormsModule
   ],
   declarations: [

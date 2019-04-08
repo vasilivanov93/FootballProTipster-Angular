@@ -7,18 +7,18 @@
 
     <div class="form__body">
       <div class="form__controls">
-        <label for="name">
+        <label for="email">
           <i class="fas fa-user"></i>
         </label>
 
-        <input ngModel #name="ngModel" pattern="[A-z][a-z]+\s[A-z][a-z]+" type="text" id="name" class="field" name="name" placeholder="Name" autoComplete="off" required/>
+        <input ngModel #email="ngModel" pattern="^\w+@\w+\..{2,3}(.{2,3})?$" type="text" id="email" class="field" name="email" placeholder="Email" autoComplete="off" required/>
 
-        <div class="alert alert-danger" *ngIf="name?.touched && name?.errors?.required">
+        <div class="alert alert-danger" *ngIf="email?.touched && email?.errors?.required">
           This field is required!
         </div>
 
-        <div class="alert alert-danger" *ngIf="name?.errors?.pattern">
-          Name should start with capital letter and contain space between first and last name!
+        <div class="alert alert-danger" *ngIf="email?.errors?.pattern">
+          Email should be correct: exaple@example.com!
         </div>
       </div>
 
@@ -27,14 +27,14 @@
           <i class="fas fa-lock"></i>
         </label>
 
-        <input ngModel #password="ngModel" pattern="^(?=.*\d)(?=.*[a-zA-Z]).{3,16}$" type="password" id="password" class="field" name="password" placeholder="Password" autoComplete="off" required/>
+        <input ngModel #password="ngModel" pattern="^[A-Za-z0-9]{4,16}$" type="password" id="password" class="field" name="password" placeholder="Password" autoComplete="off" required/>
 
         <div class="alert alert-danger" *ngIf="password?.touched && password?.errors?.required">
           This field is required!
         </div>
 
         <div class="alert alert-danger" *ngIf="password?.errors?.pattern">
-          Password must be between 3 and 16 symbols and must contain only letters and digits!
+          Password must be between 4 and 16 symbols and must contain only letters and digits!
         </div>
       </div>
     </div>

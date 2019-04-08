@@ -38,20 +38,20 @@
           </div>
         </div>
 
-        <div ngModelGroup=”passwords” #passwords="ngModelGroup" appCheckPassword>
+        <div ngModelGroup="passwords" #passwords="ngModelGroup" appCheckPassword>
           <div class="form__controls">
             <label for="password">
               <i class="fas fa-lock"></i>
             </label>
 
-            <input ngModel #password="ngModel" pattern="^(?=.*\d)(?=.*[a-zA-Z]).{3,16}$" type="password" id="password" class="field" name="password" placeholder="Password" autoComplete="off" required/>
+            <input ngModel #password="ngModel" pattern="^[A-Za-z0-9]{4,16}$" type="password" id="password" class="field" name="password" placeholder="Password" autoComplete="off" required/>
 
             <div class="alert alert-danger" *ngIf="password?.touched && password?.errors?.required">
               This field is required!
             </div>
 
             <div class="alert alert-danger" *ngIf="password?.errors?.pattern">
-              Password must be between 3 and 16 symbols and must contain only letters and digits!
+              Password must be between 4 and 16 symbols and must contain only letters and digits!
             </div>
           </div>
 

@@ -22,7 +22,6 @@ import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
     SharedModule,
     AuthenticationModule
   ],
