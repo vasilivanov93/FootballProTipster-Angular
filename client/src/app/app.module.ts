@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 // Modules
 import {SharedModule} from './components/shared/shared.module';
 import {AuthenticationModule} from './components/authentication/authentication.module';
+
+// Interceptors
+import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import {AuthenticationModule} from './components/authentication/authentication.m
     SharedModule,
     AuthenticationModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
