@@ -8,12 +8,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  username : string;
   constructor(public authService: AuthService,
               private router: Router) {
   }
 
   ngOnInit() {
+    this.username = localStorage.getItem('username');
   }
 
   logout() {
