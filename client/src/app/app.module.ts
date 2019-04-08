@@ -4,27 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 // Modules
 import {SharedModule} from './components/shared/shared.module';
-import { RegisterComponent } from './components/authentication/register/register.component';
-import { CheckPasswordDirective } from './core/directives/check-password.directive';
-import { LoginComponent } from './components/authentication/login/login.component';
+import {AuthenticationModule} from './components/authentication/authentication.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegisterComponent,
-    CheckPasswordDirective,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    AuthenticationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
