@@ -10,12 +10,14 @@ import {FormsModule} from '@angular/forms';
 import {SharedModule} from './components/shared/shared.module';
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { CheckPasswordDirective } from './core/directives/check-password.directive';
+import { LoginComponent } from './components/authentication/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    CheckPasswordDirective
+    CheckPasswordDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
