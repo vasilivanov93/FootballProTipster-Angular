@@ -28,9 +28,9 @@ export class AuthService {
   }
 
   isAdmin() {
-    return localStorage.getItem('token') !== null
-      && localStorage.getItem('username') === 'Admin'
-      && localStorage.getItem('isAdmin');
+    return localStorage.getItem('token') !== null &&
+      localStorage.getItem('isAdmin') &&
+      localStorage.getItem('username') === 'Admin';
   }
 
   getToken() {

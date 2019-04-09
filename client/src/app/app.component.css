@@ -181,12 +181,19 @@ select {
 }
 
 .btn--register,
-.btn--login {
+.btn--login,
+.btn--edit {
+  border: none;
   background-color: #293B8F;
 }
 
 .btn--create {
   background: rgb(28, 184, 65);
+}
+
+.btn--delete {
+  border: none;
+  background-color: rgb(202, 60, 60);
 }
 
 .btn:focus,
@@ -210,4 +217,58 @@ select {
   margin-top: 30px;
   border: 1px solid transparent;
   border-radius: .25rem;
+}
+
+.table-container {
+  border-collapse: collapse;
+}
+
+caption {
+  font-size: 26px;
+  font-style: italic;
+  padding: 10px 0;
+  color: #9de245;
+  text-shadow: 0.08em 0.08em 0.08em rgba(41,59,143,0.7);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+td {
+  padding: 0.5em;
+  border: 1px solid #9de245;
+}
+
+tr:nth-child(odd) {
+  background: #DDD
+}
+
+th {
+  background: #293b8f;
+  color: white;
+  padding: 0.5em;
+  border: 1px solid #9de245;
+}
+
+.flex-row {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  th, td {
+    width: auto;
+    display: block;
+    border: 0;
+  }
+
+  th {
+    border-left: solid 1px #1565C0;
+    border-right: solid 1px #1565C0;
+    border-bottom: solid 1px #1565C0;
+  }
+
+  td {
+    border-left: solid 1px #d9d9d9;
+    border-right: solid 1px #d9d9d9;
+    border-bottom: solid 1px #d9d9d9;
+  }
 }
