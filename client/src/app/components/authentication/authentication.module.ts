@@ -10,6 +10,7 @@ import {LoginComponent} from './login/login.component';
 // Directives
 import {CheckPasswordDirective} from '../../core/directives/check-password.directive';
 import {HttpClientModule} from '@angular/common/http';
+import {AuthenticationRoutingModule} from './authentication-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    AuthenticationRoutingModule
   ],
   declarations: [
     RegisterComponent,
@@ -26,7 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
     CheckPasswordDirective
   ],
   exports: [
-
+    RegisterComponent,
+    LoginComponent,
+    CheckPasswordDirective
   ]
 })
 

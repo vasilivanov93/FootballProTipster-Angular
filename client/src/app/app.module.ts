@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 
 // Modules
 import {SharedModule} from './components/shared/shared.module';
-import {AuthenticationModule} from './components/authentication/authentication.module';
 
 // Interceptors
 import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
@@ -21,9 +20,9 @@ import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     SharedModule,
-    AuthenticationModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true },

@@ -7,28 +7,28 @@
         </div>
       </a>
 
-      <p *ngIf="authService.isAuthenticated()">Welcome {{username}}!</p>
+<!--      <p *ngIf="authService.isAuthenticated()">Welcome {{username}}!</p>-->
 
       <nav class="nav">
         <ul>
           <li>
-            <a routerLink="/home" routerLinkActive="active">Home</a>
+            <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
           </li>
 
           <li *ngIf="!authService.isAuthenticated()">
-            <a routerLink="/register" routerLinkActive="active">Register</a>
+            <a [routerLink]="['/auth/register']" routerLinkActive="active">Register</a>
           </li>
 
           <li *ngIf="!authService.isAuthenticated()">
-            <a routerLink="/login" routerLinkActive="active">Login</a>
+            <a [routerLink]="['/auth/login']" routerLinkActive="active">Login</a>
           </li>
 
           <li *ngIf="authService.isAdmin()">
-            <a routerLink="/bet/create" routerLinkActive="active">Create</a>
+            <a [routerLink]="['/bet/create']" routerLinkActive="active">Create</a>
           </li>
 
           <li *ngIf="authService.isAuthenticated()">
-              <a routerLink="/bet/history" routerLinkActive="active">History</a>
+              <a [routerLink]="['/bet/history']" routerLinkActive="active">History</a>
           </li>
 
           <li *ngIf="authService.isAuthenticated()">
