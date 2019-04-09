@@ -11,13 +11,10 @@ import {SharedModule} from './components/shared/shared.module';
 
 // Interceptors
 import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
-import { CreateBetComponent } from './components/bet/create-bet/create-bet.component';
-
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CreateBetComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

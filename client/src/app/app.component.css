@@ -74,7 +74,8 @@ img {
 }
 
 .register,
-.login {
+.login,
+.create {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,6 +88,13 @@ img {
 .register,
 .login {
   background-image: url("../assets/images/finalBall.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.create {
+  background-image: url("../assets/images/players.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -175,6 +183,10 @@ select {
 .btn--register,
 .btn--login {
   background-color: #293B8F;
+}
+
+.btn--create {
+  background: rgb(28, 184, 65);
 }
 
 .btn:focus,
