@@ -69,8 +69,6 @@
         <th class="flex-row" role="columnheader">Odd</th>
 
         <th class="flex-row" role="columnheader">Result</th>
-
-        <th class="flex-row" role="columnheader">Actions</th>
       </tr>
       </thead>
 
@@ -89,12 +87,6 @@
         <td class="flex-row" role="cell">{{bet.odd}}</td>
 
         <td class="flex-row" role="cell">{{bet.resultBet}}</td>
-
-        <td class="flex-row" role="cell">
-          <button class="btn--edit" [routerLink]="['edit'] + bet._id">Edit</button>
-
-          <button class="btn--delete" [routerLink]="['delete'] + bet._id">Delete</button>
-        </td>
       </tr>
       </tbody>
     </table>
