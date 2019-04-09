@@ -5,6 +5,7 @@ export interface Bet {
   result: string;
   prediction: string;
   odd: string;
+  isFinished: boolean;
   date: Date;
   resultBet: string;
 }

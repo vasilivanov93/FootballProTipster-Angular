@@ -50,5 +50,53 @@
   </div>
 </ng-template>
 <ng-template [ngIf]="!authService.isAdmin()">
-  <div>User work</div>
+  <div class="shell">
+    <table class="table-container" width="100%" role="table" aria-label="Destinations">
+      <caption>History Predictions</caption>
+
+      <thead>
+      <tr class="flex-table header" role="rowgroup">
+        <th class="flex-row first" role="columnheader">Date</th>
+
+        <th class="flex-row" role="columnheader">Home</th>
+
+        <th class="flex-row" role="columnheader">Match</th>
+
+        <th class="flex-row" role="columnheader">Away</th>
+
+        <th class="flex-row" role="columnheader">Prediction</th>
+
+        <th class="flex-row" role="columnheader">Odd</th>
+
+        <th class="flex-row" role="columnheader">Result</th>
+
+        <th class="flex-row" role="columnheader">Actions</th>
+      </tr>
+      </thead>
+
+      <tbody *ngFor="let bet of (bet$ | async)">
+      <tr class="flex-table row" role="rowgroup" *ngIf="!!bet.isFinished">
+        <td class="flex-row first" role="cell">{{bet.date | date: 'dd.MM.yyyy'}}</td>
+
+        <td class="flex-row" role="cell">{{bet.homeTeam}}</td>
+
+        <td class="flex-row" role="cell">{{bet.result}}</td>
+
+        <td class="flex-row" role="cell">{{bet.awayTeam}}</td>
+
+        <td class="flex-row" role="cell">{{bet.prediction}}</td>
+
+        <td class="flex-row" role="cell">{{bet.odd}}</td>
+
+        <td class="flex-row" role="cell">{{bet.resultBet}}</td>
+
+        <td class="flex-row" role="cell">
+          <button class="btn--edit" [routerLink]="['edit'] + bet._id">Edit</button>
+
+          <button class="btn--delete" [routerLink]="['delete'] + bet._id">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </ng-template>
