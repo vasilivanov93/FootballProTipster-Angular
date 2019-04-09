@@ -18,7 +18,7 @@ export class CreateBetComponent implements OnInit {
 
   create() {
     this.betService.create(this.createForm.value).subscribe((data) => {
-      this.router.navigate([ '/home' ]);
+      this.router.navigate([ '/bet/history' ]);
     });
   }
 }
