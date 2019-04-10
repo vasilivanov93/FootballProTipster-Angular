@@ -75,7 +75,8 @@ img {
 
 .register,
 .login,
-.create {
+.create,
+.edit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,6 +84,11 @@ img {
   background: #222222;
   min-height: calc(100vh - 123px);
   background: linear-gradient(to top, #16222A , #3A6073);
+}
+
+.edit .form {
+  padding-top: 30px;
+  padding-bottom: 80px;
 }
 
 .register,
@@ -95,6 +101,13 @@ img {
 
 .create {
   background-image: url("../assets/images/players.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.edit {
+  background-image: url("../assets/images/stadium.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

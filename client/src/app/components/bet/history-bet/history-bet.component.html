@@ -40,9 +40,9 @@
           <td class="flex-row" role="cell">{{bet.resultBet}}</td>
 
           <td class="flex-row" role="cell">
-              <button class="btn--edit" [routerLink]="['edit'] + bet._id">Edit</button>
+              <button class="btn--edit" [routerLink]="['/bet/edit', bet._id]">Edit</button>
 
-              <button class="btn--delete" [routerLink]="['delete'] + bet._id">Delete</button>
+              <button class="btn--delete" [routerLink]="['/bet/delete', bet._id]">Delete</button>
           </td>
       </tr>
       </tbody>

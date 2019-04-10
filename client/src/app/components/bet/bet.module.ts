@@ -10,6 +10,7 @@ import {CreateBetComponent} from './create-bet/create-bet.component';
 // Routing Module
 import {BetRoutingModule} from './bet-routing.module';
 import { HistoryBetComponent } from './history-bet/history-bet.component';
+import { EditBetComponent } from './edit-bet/edit-bet.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { HistoryBetComponent } from './history-bet/history-bet.component';
   ],
   declarations: [
     CreateBetComponent,
-    HistoryBetComponent
+    HistoryBetComponent,
+    EditBetComponent
   ],
   exports: [
     CreateBetComponent
