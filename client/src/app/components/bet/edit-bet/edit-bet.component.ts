@@ -14,7 +14,7 @@ export class EditBetComponent implements OnInit {
   resultBets: Array<string> = ['Win', 'Lose', 'Draw'];
   bet: Bet;
   @ViewChild('editForm') editForm: NgForm;
-
+  bet$: Observable<Bet[]>;
   constructor(private route: ActivatedRoute,
               private betService: BetService,
               private router: Router) { }
@@ -24,6 +24,14 @@ export class EditBetComponent implements OnInit {
   }
 
   edit() {
+    this.route.params.subscribe((data) => {
+      const id = data['id'];
 
+      this.betService.editBet(id, this.editForm.value).subscribe((bet) => {
+        this.bet$ = this.betService.history();
+
+        this.router.navigate([ '/bet/history' ]);
+      });
+    });
   }
 }
