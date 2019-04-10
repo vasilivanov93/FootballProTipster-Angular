@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Bet} from '../../../core/models/Bet';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BetService} from '../../../core/services/bet.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-delete-bet',
@@ -10,13 +12,25 @@ import {ActivatedRoute} from '@angular/router';
 export class DeleteBetComponent implements OnInit {
   resultBets: Array<string> = ['Win', 'Lose', 'Draw'];
   bet: Bet;
-  constructor(private route: ActivatedRoute) { }
+  bet$: Observable<Bet[]>;
+  id: string;
+  constructor(private route: ActivatedRoute,
+              private betService: BetService,
+              private router: Router) { }
 
   ngOnInit() {
     this.bet = this.route.snapshot.data['singleBet'];
+
+    this.route.params.subscribe((data) => {
+      this.id = data['id'];
+    });
   }
 
   delete(id) {
+    this.betService.deleteBet(id).subscribe((data) => {
+      this.router.navigate([ '/bet/history' ]);
 
+      this.bet$ = this.betService.history();
+    });
   }
 }
