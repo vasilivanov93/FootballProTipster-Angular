@@ -1,0 +1,68 @@
+<div class="delete">
+  <ng-template [ngIf]="bet">
+    <form class="form">
+      <div class="form__inner">
+        <div class="form__head">
+          <h2 class="form__title">Delete Bet</h2>
+        </div>
+
+        <div class="form__body">
+          <div class="form__controls">
+            <label for="homeTeam">
+              <i class="fas fa-user"></i>
+            </label>
+
+            <input [(ngModel)]="bet.homeTeam" type="text" id="homeTeam" class="field" name="homeTeam" placeholder="Home Team" disabled/>
+          </div>
+
+          <div class="form__controls">
+            <label for="result">
+              <i class="fas fa-futbol"></i>
+            </label>
+
+            <input [(ngModel)]="bet.result" type="text" id="result" class="field" name="result" placeholder="? - ?" disabled/>
+          </div>
+
+          <div class="form__controls">
+            <label for="awayTeam">
+              <i class="fas fa-user"></i>
+            </label>
+
+            <input [(ngModel)]="bet.awayTeam" type="text" id="awayTeam" class="field" name="awayTeam" placeholder="Away Team" disabled/>
+          </div>
+
+          <div class="form__controls">
+            <label for="prediction">
+              <i class="fas fa-futbol"></i>
+            </label>
+
+            <input [(ngModel)]="bet.prediction" type="text" id="prediction" class="field" name="prediction" placeholder="Prediction" disabled/>
+          </div>
+
+          <div class="form__controls">
+            <label for="odd">
+              <i class="fas fa-futbol"></i>
+            </label>
+
+            <input [(ngModel)]="bet.odd" type="text" id="odd" class="field" name="odd" placeholder="Odd" disabled/>
+          </div>
+
+          <div class="form__controls">
+            <label for="resultBet">
+              <i class="fas fa-futbol"></i>
+            </label>
+
+            <select [(ngModel)]="bet.resultBet" id="resultBet" class="form-control" name="resultBet" disabled>
+              <option value="Choose result prediction" disabled>Choose result prediction</option>
+              <option value="{{resultBet}}" *ngFor="let resultBet of resultBets">{{resultBet}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form__actions">
+          <input (click)="delete(bet._id)" type="submit" value="Delete Bet" name="editBet" class="btn btn--delete"/>
+        </div>
+      </div>
+    </form>
+  </ng-template>
+</div>
