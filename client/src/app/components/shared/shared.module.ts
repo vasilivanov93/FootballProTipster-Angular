@@ -1,29 +1,46 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 // Components
-import {HeaderComponent} from './header/header.component';
+import {AppNavComponent} from './app-nav/app-nav.component';
 import {HomeComponent} from './home/home.component';
 import {FooterComponent} from './footer/footer.component';
+
+// Cdk and Material
+import {LayoutModule} from '@angular/cdk/layout';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   declarations: [
-    HeaderComponent,
+    AppNavComponent,
     HomeComponent,
     FooterComponent
   ],
   exports: [
-    HeaderComponent,
+    AppNavComponent,
     HomeComponent,
     FooterComponent
   ]
 })
 
-export class SharedModule { }
+export class SharedModule {
+}

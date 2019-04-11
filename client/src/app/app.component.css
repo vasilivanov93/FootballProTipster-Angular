@@ -83,7 +83,7 @@ img {
   align-items: center;
   color: #fff;
   background: #222222;
-  min-height: calc(100vh - 123px);
+  min-height: calc(100vh - 118px);
   background: linear-gradient(to top, #16222A , #3A6073);
 }
 
@@ -286,5 +286,15 @@ th {
     border-left: solid 1px #d9d9d9;
     border-right: solid 1px #d9d9d9;
     border-bottom: solid 1px #d9d9d9;
+  }
+}
+
+@media (max-width: 600px) {
+  .register,
+  .login,
+  .create,
+  .edit,
+  .delete {
+    min-height: calc(100vh - 110px);
   }
 }
