@@ -11,6 +11,7 @@ export class BetService {
   private readonly betByIdUrl = 'http://localhost:5000/bet/';
   private readonly editBetUrl = 'http://localhost:5000/bet/edit/';
   private readonly deleteBetUrl = 'http://localhost:5000/bet/delete/';
+  private readonly lastFiveBetUrl = 'http://localhost:5000/bet/home';
 
   constructor(private http: HttpClient) { }
 
@@ -32,5 +33,9 @@ export class BetService {
 
   deleteBet(id) {
     return this.http.delete(this.deleteBetUrl + id);
+  }
+
+  lastFiveBet() {
+    return this.http.get<Bet[]>(this.lastFiveBetUrl);
   }
 }

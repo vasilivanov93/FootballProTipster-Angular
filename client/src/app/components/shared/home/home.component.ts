@@ -11,11 +11,12 @@ import {Bet} from '../../../core/models/Bet';
 })
 export class HomeComponent implements OnInit {
   bet$: Observable<Bet[]>;
-
+  lastFiveBet$: Observable<Bet[]>;
   constructor(public authService: AuthService,
               private betService: BetService) { }
 
   ngOnInit() {
     this.bet$ = this.betService.history();
+    this.lastFiveBet$ = this.betService.lastFiveBet();
   }
 }

@@ -79,6 +79,52 @@
                   </span>
                 </div>
               </div>
+
+              <div class="section__entry">
+                <table class="table-container" width="100%" role="table" aria-label="Destinations">
+                  <caption>Last 5 Predictions</caption>
+
+                  <thead>
+                  <tr class="flex-table header" role="rowgroup">
+                    <th class="flex-row first" role="columnheader">Date</th>
+
+                    <th class="flex-row" role="columnheader">Home</th>
+
+                    <th class="flex-row" role="columnheader">Match</th>
+
+                    <th class="flex-row" role="columnheader">Away</th>
+
+                    <th class="flex-row" role="columnheader">Prediction</th>
+
+                    <th class="flex-row" role="columnheader">Odd</th>
+
+                    <th class="flex-row" role="columnheader">Result</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr class="flex-table row" role="rowgroup" *ngFor="let lastFive of lastFiveBet$ | async">
+                      <td class="flex-row first" role="cell">{{lastFive.date | date: 'dd.MM.yyyy'}}</td>
+
+                      <td class="flex-row" role="cell">{{lastFive.homeTeam}}</td>
+
+                      <td class="flex-row" role="cell">{{lastFive.result}}</td>
+
+                      <td class="flex-row" role="cell">{{lastFive.awayTeam}}</td>
+
+                      <td class="flex-row"
+                          role="cell">{{lastFive.prediction}}</td>
+
+                      <td class="flex-row" role="cell">{{lastFive.odd}}</td>
+
+                      <td class="flex-row" role="cell">{{lastFive.resultBet}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+                <p class="viewAll">View all <a [routerLink]="['/bet/history']">Predictions</a></p>
+              </div>
             </div>
           </div>
 
