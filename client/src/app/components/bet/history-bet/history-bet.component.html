@@ -46,6 +46,12 @@
           </td>
       </tr>
       </tbody>
+
+      <tbody *ngIf="bet$ | async as bet">
+      <tr class="flex-table row" role="rowgroup">
+        <td colspan="8" style="text-align: center;" class="flex-row" role="cell" *ngIf="bet.length === 0">Coming soon!</td>
+      </tr>
+      </tbody>
     </table>
   </div>
 </ng-template>
@@ -87,6 +93,12 @@
         <td class="flex-row" role="cell">{{bet.odd}}</td>
 
         <td class="flex-row" role="cell">{{bet.resultBet}}</td>
+      </tr>
+      </tbody>
+
+      <tbody *ngIf="bet$ | async as bet">
+      <tr class="flex-table row" role="rowgroup">
+        <td colspan="7" style="text-align: center;" class="flex-row" role="cell" *ngIf="bet.length === 0">Coming soon!</td>
       </tr>
       </tbody>
     </table>

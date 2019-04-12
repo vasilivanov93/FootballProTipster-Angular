@@ -120,8 +120,8 @@
                       <td class="flex-row" role="cell">{{lastFive.resultBet}}</td>
                     </tr>
 
-                  <tr *ngIf="lastFiveBet$ | async as lastFive">
-                    <td colspan="7" style="text-align: center;" *ngIf="lastFive.length === 0">Coming soon!</td>
+                  <tr class="flex-table row" role="rowgroup" *ngIf="lastFiveBet$ | async as lastFive">
+                    <td colspan="7" style="text-align: center;" class="flex-row" role="cell" *ngIf="lastFive.length === 0">Coming soon!</td>
                   </tr>
                   </tbody>
                 </table>
