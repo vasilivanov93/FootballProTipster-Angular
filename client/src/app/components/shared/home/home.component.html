@@ -169,6 +169,45 @@
             </div>
           </section>
 
+          <section class="section section--contact">
+            <div class="section__head">
+              <h2 class="section__title"> Customers Support</h2>
+            </div>
+
+            <div class="section__body">
+              <div class="section__entry">
+                <p>The team of Football ProTipster is available 24/7 and awaits your questions and queries about our services and football predictions. We will endeavor to respond to every inquiry in the shortest possible time with individual attention because every customer is important to us.</p>
+              </div>
+
+              <form class="contactForm" #contactForm="ngForm" (ngSubmit)="contact()">
+                <div class="form__controls">
+                  <input ngModel #subject="ngModel" pattern="^[A-Za-z0-9 \-\?\!\.]{5,50}$" type="email" id="subject" name="subject"  placeholder="Subject" required>
+
+                  <div class="alert alert-danger" *ngIf="subject?.touched && subject?.errors?.required">
+                    This field is required!
+                  </div>
+
+                  <div class="alert alert-danger" *ngIf="subject?.errors?.pattern">
+                    Subject must be between 5 and 50 symbols(letter, digits, space, dot, ? and !)!
+                  </div>
+                </div>
+
+                <div class="form__controls">
+                  <textarea ngModel #message="ngModel" id="message" name="message" rows="10" placeholder="Message" required></textarea>
+
+                  <div class="alert alert-danger" *ngIf="message?.touched && message?.errors?.required">
+                    This field is required!
+                  </div>
+                </div>
+
+                <div class="form__actions">
+                  <button [disabled]="contactForm.invalid" class="btn" type="submit" (click)="triggerFalseClick()">Send</button>
+                  <a #test style="visibility: hidden" href="mailto:footballprotipsters93@gmail.com?subject={{subject.value}}&body={{message.value}}"></a>
+                </div>
+              </form>
+            </div>
+          </section>
+
           <section class="section section--divisions">
             <div class="section__head">
               <h2 class="section__title">The most popular Football Divisions:</h2>

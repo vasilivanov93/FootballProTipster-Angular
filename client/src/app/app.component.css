@@ -298,3 +298,15 @@ th {
     min-height: calc(100vh - 110px);
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .form__inner {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .form__inner {
+    width: 300px;
+  }
+}

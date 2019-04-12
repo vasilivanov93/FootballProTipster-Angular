@@ -13,7 +13,7 @@ import {SharedModule} from './components/shared/shared.module';
 import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
-import {ResponseHandlerInterceptorService} from "./core/interceptors/response-handler-interceptor.service";
+import {ResponseHandlerInterceptorService} from './core/interceptors/response-handler-interceptor.service';
 
 @NgModule({
   declarations: [
