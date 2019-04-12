@@ -119,9 +119,12 @@
 
                       <td class="flex-row" role="cell">{{lastFive.resultBet}}</td>
                     </tr>
+
+                  <tr *ngIf="lastFiveBet$ | async as lastFive">
+                    <td colspan="7" style="text-align: center;" *ngIf="lastFive.length === 0">Coming soon!</td>
+                  </tr>
                   </tbody>
                 </table>
-
 
                 <p class="viewAll">View all <a [routerLink]="['/bet/history']">Predictions</a></p>
               </div>
