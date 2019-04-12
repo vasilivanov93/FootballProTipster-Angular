@@ -123,3 +123,19 @@
 .home .grid .img-container:hover {
   filter: sepia(0%);
 }
+
+@media (max-width: 769px) {
+  .home .section--about {
+    padding-right: 0;
+  }
+
+  .home .section--bookmakers {
+    display: none;
+    padding-left: 0;
+  }
+
+  .home .dailyPrediction > span {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
