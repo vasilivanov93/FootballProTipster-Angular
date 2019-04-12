@@ -43,6 +43,42 @@
                   with us.
                 </p>
               </div>
+
+              <div class="section__entry" *ngIf="bet$ | async as bet">
+                <h2 class="daily__title">Daily Predictions</h2>
+
+                <h3 *ngIf="bet.length === 0">Coming soon daily predictions!</h3>
+
+                <div class="dailyPrediction" *ngFor="let bet of (bet$ | async)">
+                  <span *ngIf="!bet.isFinished">
+                      <div class="homeTeam">
+                        <h4 class="name">{{bet.homeTeam}}</h4>
+
+                        <div class="img-container">
+                          <img src="../../../../assets/images/daily.png" alt="dailyPrediction"/>
+                        </div>
+                      </div>
+
+                      <div class="prediction">
+                        <p class="date">{{bet.date | date: 'dd.MM.yyyy'}}</p>
+
+                        <p class="result">{{bet.result}}</p>
+
+                        <p class="prediction">Prediction: {{bet.prediction}}</p>
+
+                        <p class="odd">Odd: {{bet.odd}}</p>
+                      </div>
+
+                      <div class="awayTeam">
+                        <h4 class="name">{{bet.awayTeam}}</h4>
+
+                        <div class="img-container">
+                          <img src="../../../../assets/images/daily.png" alt="dailyPrediction"/>
+                        </div>
+                      </div>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 

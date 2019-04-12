@@ -58,7 +58,8 @@
   padding-left: 20px;
 }
 
-.home .section--bookmakers .section__head {
+.home .section--bookmakers .section__head,
+.home .daily__title{
   font-style: italic;
   color: #9de245;
   text-shadow: 0.08em 0.08em 0.08em rgba(41, 59, 143, 0.7);
@@ -67,6 +68,24 @@
 
 .home .section--bookmakers .img-container {
   padding-bottom: 20px;
+}
+
+.home .dailyPrediction > span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home .daily__title {
+  flex: 1 0 100%;
+  text-align: center;
+}
+
+.home .homeTeam,
+.home .awayTeam,
+.home .prediction {
+  text-align: center;
 }
 
 .home .section--divisions {

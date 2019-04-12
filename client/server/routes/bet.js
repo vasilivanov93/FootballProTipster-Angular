@@ -109,7 +109,15 @@ router.delete("/delete/:id", authCheck, (req, res) => {
 
 router.put("/edit/:id", authCheck, (req, res) => {
   const id = req.params.id;
-  const bet = req.body;
+  const bet = {
+    homeTeam: req.body.homeTeam,
+    result: req.body.result,
+    awayTeam: req.body.awayTeam,
+    prediction: req.body.prediction,
+    odd: req.body.odd,
+    resultBet: req.body.resultBet,
+    isFinished: true,
+  };
 
   if (!bet) {
     return res.status(404).json({
