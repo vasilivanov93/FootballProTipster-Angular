@@ -163,22 +163,14 @@
           <form class="contactForm" #contactForm="ngForm" (ngSubmit)="contact()">
             <div class="form__controls">
               <input ngModel #subject="ngModel" pattern="^[A-Za-z0-9 \-\?\!\.]{5,50}$" type="email" id="subject" name="subject"  placeholder="Subject" required>
+            </div>
 
-              <div class="alert alert-danger" *ngIf="subject?.touched && subject?.errors?.required">
-                This field is required!
-              </div>
-
-              <div class="alert alert-danger" *ngIf="subject?.errors?.pattern">
-                Subject must be between 5 and 50 symbols(letter, digits, space, dot, ? and !)!
-              </div>
+            <div class="form__error form__error--danger" *ngIf="subject?.touched && subject?.errors?.pattern">
+              Subject must be between 5 and 50 symbols(letter, digits, space, dot, ? and !)!
             </div>
 
             <div class="form__controls">
               <textarea ngModel #message="ngModel" id="message" name="message" rows="10" placeholder="Message" required></textarea>
-
-              <div class="alert alert-danger" *ngIf="message?.touched && message?.errors?.required">
-                This field is required!
-              </div>
             </div>
 
             <div class="form__actions">

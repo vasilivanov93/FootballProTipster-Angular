@@ -12,7 +12,7 @@
         <i class="fas fa-shield-alt"></i>
       </div>
 
-      <div class="form__error form__error--danger" *ngIf="homeTeam?.errors?.pattern">
+      <div class="form__error form__error--danger" *ngIf="homeTeam?.touched && homeTeam?.errors?.pattern">
         Home team must be more than 3 symbols!
       </div>
 
@@ -22,7 +22,7 @@
         <i class="fas fa-shield-alt"></i>
       </div>
 
-      <div class="form__error form__error--danger" *ngIf="awayTeam?.errors?.pattern">
+      <div class="form__error form__error--danger" *ngIf="awayTeam?.touched && awayTeam?.errors?.pattern">
         Away team must be more than 3 symbols!
       </div>
 
@@ -32,7 +32,7 @@
         <i class="fas fa-futbol"></i>
       </div>
 
-      <div class="form__error form__error--danger" *ngIf="prediction?.errors?.pattern">
+      <div class="form__error form__error--danger" *ngIf="prediction?.touched && prediction?.errors?.pattern">
         Prediction must be more than 1 symbols!
       </div>
 
@@ -42,7 +42,7 @@
         <i class="fas fa-futbol"></i>
       </div>
 
-      <div class="form__error form__error--danger" *ngIf="odd?.errors?.pattern">
+      <div class="form__error form__error--danger" *ngIf="odd?.touched && odd?.errors?.pattern">
         Odd must be contain number: 1 or 1.00!
       </div>
     </div>
