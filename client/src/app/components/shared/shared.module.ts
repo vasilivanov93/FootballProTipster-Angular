@@ -17,6 +17,8 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
+import { AnonymousHomeComponent } from './anonymous-home/anonymous-home.component';
+import { AuthenticationHomeComponent } from './authentication-home/authentication-home.component';
 
 @NgModule({
   imports: [
@@ -33,7 +35,9 @@ import {
   declarations: [
     AppNavComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    AnonymousHomeComponent,
+    AuthenticationHomeComponent
   ],
   exports: [
     AppNavComponent,

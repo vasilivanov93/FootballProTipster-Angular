@@ -83,7 +83,7 @@ img {
   align-items: center;
   color: #fff;
   background: #222222;
-  min-height: calc(100vh - 118px);
+  min-height: calc(100vh - 114px);
   background: linear-gradient(to top, #16222A , #3A6073);
 }
 
@@ -95,24 +95,17 @@ img {
 
 .register,
 .login {
-  background-image: url("../assets/images/finalBall.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
+  background: url("../assets/images/finalBall.jpg")  no-repeat top center;
+  background-size: cover;}
 
 .create {
-  background-image: url("../assets/images/players.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("../assets/images/players.jpg") no-repeat top center;
   background-size: cover;
 }
 
 .edit,
 .delete {
-  background-image: url("../assets/images/stadium.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: url("../assets/images/stadium.jpg")  no-repeat top center;
   background-size: cover;
 }
 
