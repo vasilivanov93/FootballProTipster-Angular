@@ -6,11 +6,11 @@ import {AuthService} from '../../../core/services/auth.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-app-nav',
-  templateUrl: './app-nav.component.html',
-  styleUrls: ['./app-nav.component.css']
+  selector: 'app-navigation',
+  templateUrl: './navigation.component.html',
+  styleUrls: ['./navigation.component.css']
 })
-export class AppNavComponent {
+export class NavigationComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(['(max-width: 768px)'])
     .pipe(

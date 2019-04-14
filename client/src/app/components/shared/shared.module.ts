@@ -4,7 +4,7 @@ import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
 // Components
-import {AppNavComponent} from './app-nav/app-nav.component';
+import {NavigationComponent} from './navigation/navigation.component';
 import {HomeComponent} from './home/home.component';
 import {FooterComponent} from './footer/footer.component';
 
@@ -33,14 +33,14 @@ import { AuthenticationHomeComponent } from './authentication-home/authenticatio
     MatListModule
   ],
   declarations: [
-    AppNavComponent,
+    NavigationComponent,
     HomeComponent,
     FooterComponent,
     AnonymousHomeComponent,
     AuthenticationHomeComponent
   ],
   exports: [
-    AppNavComponent,
+    NavigationComponent,
     HomeComponent,
     FooterComponent
   ]
