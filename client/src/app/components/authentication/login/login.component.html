@@ -7,35 +7,22 @@
 
     <div class="form__body">
       <div class="form__controls">
-        <label for="email">
-          <i class="fas fa-user"></i>
-        </label>
-
         <input ngModel #email="ngModel" pattern="^\w+@\w+\..{2,3}(.{2,3})?$" type="text" id="email" class="field" name="email" placeholder="Email" autoComplete="off" required/>
 
-        <div class="alert alert-danger" *ngIf="email?.touched && email?.errors?.required">
-          This field is required!
-        </div>
-
-        <div class="alert alert-danger" *ngIf="email?.errors?.pattern">
-          Email should be correct: exaple@example.com!
-        </div>
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form__error form__error--danger" *ngIf="email?.errors?.pattern">
+        Email should be correct: exaple@example.com!
       </div>
 
       <div class="form__controls">
-        <label for="password">
-          <i class="fas fa-lock"></i>
-        </label>
-
         <input ngModel #password="ngModel" pattern="^[A-Za-z0-9]{4,16}$" type="password" id="password" class="field" name="password" placeholder="Password" autoComplete="off" required/>
 
-        <div class="alert alert-danger" *ngIf="password?.touched && password?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-lock"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="password?.errors?.pattern">
-          Password must be between 4 and 16 symbols and must contain only letters and digits!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="password?.errors?.pattern">
+        Password must be between 4 and 16 symbols and must contain only letters and digits!
       </div>
     </div>
 

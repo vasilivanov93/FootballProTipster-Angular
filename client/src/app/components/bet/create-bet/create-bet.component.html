@@ -7,67 +7,43 @@
 
     <div class="form__body">
       <div class="form__controls">
-        <label for="homeTeam">
-          <i class="fas fa-user"></i>
-        </label>
-
         <input ngModel #homeTeam="ngModel" pattern="^.{3,}$" type="text" id="homeTeam" class="field" name="homeTeam" placeholder="Home Team" autoComplete="off" required />
 
-        <div class="alert alert-danger" *ngIf="homeTeam?.touched && homeTeam?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-shield-alt"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="homeTeam?.errors?.pattern">
-            Home team must be more than 3 symbols!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="homeTeam?.errors?.pattern">
+        Home team must be more than 3 symbols!
       </div>
 
       <div class="form__controls">
-        <label for="awayTeam">
-          <i class="fas fa-user"></i>
-        </label>
-
         <input ngModel #awayTeam="ngModel" pattern="^.{3,}$" type="text" id="awayTeam" class="field" name="awayTeam" placeholder="Away Team" autoComplete="off" required />
 
-        <div class="alert alert-danger" *ngIf="awayTeam?.touched && awayTeam?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-shield-alt"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="awayTeam?.errors?.pattern">
-          Away team must be more than 3 symbols!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="awayTeam?.errors?.pattern">
+        Away team must be more than 3 symbols!
       </div>
 
       <div class="form__controls">
-        <label for="prediction">
-          <i class="fas fa-futbol"></i>
-        </label>
-
         <input ngModel #prediction="ngModel" pattern="^.{2,}$" type="text" id="prediction" class="field" name="prediction" placeholder="Prediction" autoComplete="off" required />
 
-        <div class="alert alert-danger" *ngIf="prediction?.touched && prediction?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-futbol"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="prediction?.errors?.pattern">
-          Prediction must be more than 1 symbols!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="prediction?.errors?.pattern">
+        Prediction must be more than 1 symbols!
       </div>
 
       <div class="form__controls">
-        <label for="odd">
-          <i class="fas fa-futbol"></i>
-        </label>
-
         <input ngModel #odd="ngModel" pattern="^\d+(\.\d{2})?$" type="text" id="odd" class="field" name="odd" placeholder="Odd" autoComplete="off" required />
 
-        <div class="alert alert-danger" *ngIf="odd?.touched && odd?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-futbol"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="odd?.errors?.pattern">
-          Odd must be contain number: 1 or 1.00!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="odd?.errors?.pattern">
+        Odd must be contain number: 1 or 1.00!
       </div>
     </div>
 

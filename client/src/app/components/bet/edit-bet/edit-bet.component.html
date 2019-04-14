@@ -8,98 +8,63 @@
 
     <div class="form__body">
       <div class="form__controls">
-        <label for="homeTeam">
-          <i class="fas fa-user"></i>
-        </label>
-
         <input #homeTeam="ngModel" [(ngModel)]="bet.homeTeam" pattern="^.{3,}$" type="text" id="homeTeam" class="field" name="homeTeam" placeholder="Home Team" required/>
 
-        <div class="alert alert-danger" *ngIf="homeTeam?.touched && homeTeam?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-users"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="homeTeam?.errors?.pattern">
-          Home team must be more than 3 symbols!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="homeTeam?.errors?.pattern">
+        Home team must be more than 3 symbols!
       </div>
 
       <div class="form__controls">
-        <label for="result">
-          <i class="fas fa-futbol"></i>
-        </label>
-
         <input #result="ngModel" [(ngModel)]="bet.result" pattern="^(\d{1,2}|\?)+\s\-\s(\d{1,2}|\?)$" type="text" id="result" class="field" name="result" autoComplete="off" placeholder="? - ?" required/>
 
-        <div class="alert alert-danger" *ngIf="result?.touched && result?.errors?.required">
-          This field is required!
-        </div>
 
-        <div class="alert alert-danger" *ngIf="result?.errors?.pattern">
-          Result must be contains only digits, spaces and dash, <em>example</em> 0 - 0!
-        </div>
+        <i class="fas fa-futbol"></i>
+      </div>
+
+      <div class="form__error form__error--danger" *ngIf="result?.errors?.pattern">
+        Result must be contains only digits, spaces and dash, <em>example</em> 0 - 0!
       </div>
 
       <div class="form__controls">
-        <label for="awayTeam">
-          <i class="fas fa-user"></i>
-        </label>
-
         <input #awayTeam="ngModel" [(ngModel)]="bet.awayTeam" pattern="^.{3,}$" type="text" id="awayTeam" class="field" name="awayTeam" placeholder="Away Team" required/>
 
-        <div class="alert alert-danger" *ngIf="awayTeam?.touched && awayTeam?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-shield-alt"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="awayTeam?.errors?.pattern">
-          Away team must be more than 3 symbols!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="awayTeam?.errors?.pattern">
+        Away team must be more than 3 symbols!
       </div>
 
       <div class="form__controls">
-        <label for="prediction">
-          <i class="fas fa-futbol"></i>
-        </label>
-
         <input #prediction="ngModel" [(ngModel)]="bet.prediction" pattern="^.{2,}$" type="text" id="prediction" class="field" name="prediction" placeholder="Prediction" required/>
 
-        <div class="alert alert-danger" *ngIf="prediction?.touched && prediction?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-futbol"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="prediction?.errors?.pattern">
-          Prediction must be more than 1 symbols!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="prediction?.errors?.pattern">
+        Prediction must be more than 1 symbols!
       </div>
 
       <div class="form__controls">
-        <label for="odd">
-          <i class="fas fa-futbol"></i>
-        </label>
-
         <input #odd="ngModel" [(ngModel)]="bet.odd" pattern="^\d+(\.\d{2})?$" type="text" id="odd" class="field" name="odd" placeholder="Odd" required/>
 
-        <div class="alert alert-danger" *ngIf="odd?.touched && odd?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-futbol"></i>
+      </div>
 
-        <div class="alert alert-danger" *ngIf="odd?.errors?.pattern">
-          Odd must be contain number: 1 or 1.00!
-        </div>
+      <div class="form__error form__error--danger" *ngIf="odd?.errors?.pattern">
+        Odd must be contain number: 1 or 1.00!
       </div>
 
       <div class="form__controls">
-        <label for="resultBet">
-          <i class="fas fa-futbol"></i>
-        </label>
-
         <select #resultBet="ngModel" [(ngModel)]="bet.resultBet" id="resultBet" class="form-control" name="resultBet" required>
           <option value="Choose result prediction" disabled>Choose result prediction</option>
           <option value="{{resultBet}}" *ngFor="let resultBet of resultBets">{{resultBet}}</option>
         </select>
 
-        <div class="alert alert-danger" *ngIf="resultBet?.touched && resultBet?.errors?.required">
-          This field is required!
-        </div>
+        <i class="fas fa-futbol"></i>
       </div>
     </div>
 
