@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {Bet} from '../../../core/models/Bet';
-import {NgForm} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {ActivatedRoute, Router} from '@angular/router';
-import {BetService} from '../../../core/services/bet.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Bet } from '../../../core/models/Bet';
+import { BetService } from '../../../core/services/bet.service';
 
 @Component({
   selector: 'app-edit-bet',

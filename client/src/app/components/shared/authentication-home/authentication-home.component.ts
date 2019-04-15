@@ -1,8 +1,8 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Observable} from 'rxjs';
-import {Bet} from '../../../core/models/Bet';
-import {NgForm} from '@angular/forms';
-import {BetService} from '../../../core/services/bet.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
+import { Bet } from '../../../core/models/Bet';
+import { BetService } from '../../../core/services/bet.service';
 
 @Component({
   selector: 'app-authentication-home',

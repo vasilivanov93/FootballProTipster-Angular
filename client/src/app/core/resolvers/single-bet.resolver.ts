@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs';
-import {BetService} from '../services/bet.service';
-import {Bet} from '../models/Bet';
+import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
+import { BetService } from '../services/bet.service';
+import { Bet } from '../models/Bet';
 
 @Injectable({
   providedIn: 'root'

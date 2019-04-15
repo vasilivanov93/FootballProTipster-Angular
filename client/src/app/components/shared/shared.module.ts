@@ -1,12 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
-
-// Components
-import {NavigationComponent} from './navigation/navigation.component';
-import {HomeComponent} from './home/home.component';
-import {FooterComponent} from './footer/footer.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // Cdk and Material
 import {LayoutModule} from '@angular/cdk/layout';
@@ -17,8 +12,13 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
+
+// Components
+import { NavigationComponent } from './navigation/navigation.component';
+import { HomeComponent } from './home/home.component';
 import { AnonymousHomeComponent } from './anonymous-home/anonymous-home.component';
 import { AuthenticationHomeComponent } from './authentication-home/authentication-home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [

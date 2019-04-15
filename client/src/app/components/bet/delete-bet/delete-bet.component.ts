@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Bet} from '../../../core/models/Bet';
-import {ActivatedRoute, Router} from '@angular/router';
-import {BetService} from '../../../core/services/bet.service';
-import {Observable} from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Bet } from '../../../core/models/Bet';
+import { BetService } from '../../../core/services/bet.service';
 
 @Component({
   selector: 'app-delete-bet',

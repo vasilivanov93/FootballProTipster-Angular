@@ -1,19 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
 
 // Modules
-import {SharedModule} from './components/shared/shared.module';
+import { SharedModule } from './components/shared/shared.module';
 
 // Interceptors
-import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ToastrModule} from 'ngx-toastr';
-import {ResponseHandlerInterceptorService} from './core/interceptors/response-handler-interceptor.service';
+import { JwtInterceptorService } from './core/interceptors/jwt-interceptor.service';
+import { ResponseHandlerInterceptorService } from './core/interceptors/response-handler-interceptor.service';
 
 @NgModule({
   declarations: [

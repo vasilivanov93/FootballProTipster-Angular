@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {AuthService} from '../../../core/services/auth.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -26,5 +26,4 @@ export class NavigationComponent {
 
     this.router.navigate([ '/auth/login' ]);
   }
-
 }

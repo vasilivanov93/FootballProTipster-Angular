@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../../core/services/auth.service';
-import {Bet} from '../../../core/models/Bet';
-import {Observable} from 'rxjs';
-import {BetService} from '../../../core/services/bet.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { Observable } from 'rxjs';
+import { Bet } from '../../../core/models/Bet';
+import { BetService } from '../../../core/services/bet.service';
 
 @Component({
   selector: 'app-history-bet',
@@ -15,8 +15,6 @@ export class HistoryBetComponent implements OnInit {
               private betService: BetService) { }
 
   ngOnInit() {
-    // @ts-ignore
     this.bet$ = this.betService.history();
   }
-
 }
