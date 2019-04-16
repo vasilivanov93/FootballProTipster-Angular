@@ -11,7 +11,7 @@ import { EditBetComponent } from './edit-bet/edit-bet.component';
 import { DeleteBetComponent } from './delete-bet/delete-bet.component';
 
 // Routing Module
-import {BetRoutingModule} from './bet-routing.module';
+import { BetRoutingModule } from './bet-routing.module';
 
 @NgModule({
   imports: [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../core/services/auth.service';
 import { Observable } from 'rxjs';
-import { Bet } from '../../../core/models/Bet';
+import { Bet} from '../../../core/models/Bet';
+import { AuthService } from '../../../core/services/auth.service';
 import { BetService } from '../../../core/services/bet.service';
 
 @Component({

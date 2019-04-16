@@ -1,5 +1,4 @@
 <div class="wrapper">
-<ng-template [ngIf]="authService.isAdmin()">
   <div class="shell">
     <table class="table-container" width="100%" role="table" aria-label="Destinations">
       <caption>History Predictions</caption>
@@ -20,12 +19,28 @@
 
         <th class="flex-row" role="columnheader">Result</th>
 
-        <th class="flex-row" role="columnheader">Actions</th>
+        <th *ngIf="authService.isAdmin()" class="flex-row" role="columnheader">Actions</th>
       </tr>
       </thead>
 
       <tbody *ngFor="let bet of (bet$ | async)">
-        <tr class="flex-table row" role="rowgroup">
+        <tr *ngIf="bet.isFinished && !authService.isAdmin()" class="flex-table row" role="rowgroup">
+          <td class="flex-row first" role="cell">{{bet.date | date: 'dd.MM.yyyy'}}</td>
+
+          <td class="flex-row" role="cell">{{bet.homeTeam}}</td>
+
+          <td class="flex-row" role="cell">{{bet.result}}</td>
+
+          <td class="flex-row" role="cell">{{bet.awayTeam}}</td>
+
+          <td class="flex-row" role="cell">{{bet.prediction}}</td>
+
+          <td class="flex-row" role="cell">{{bet.odd}}</td>
+
+          <td class="flex-row" role="cell">{{bet.resultBet}}</td>
+        </tr>
+
+        <tr *ngIf="authService.isAdmin()" class="flex-table row" role="rowgroup">
           <td class="flex-row first" role="cell">{{bet.date | date: 'dd.MM.yyyy'}}</td>
 
           <td class="flex-row" role="cell">{{bet.homeTeam}}</td>
@@ -41,69 +56,24 @@
           <td class="flex-row" role="cell">{{bet.resultBet}}</td>
 
           <td class="flex-row" role="cell">
-              <button class="btn--edit" [routerLink]="['/bet/edit', bet._id]">Edit</button>
+            <button class="btn--edit" [routerLink]="['/bet/edit', bet._id]">Edit</button>
 
-              <button class="btn--delete" [routerLink]="['/bet/delete', bet._id]">Delete</button>
+            <button class="btn--delete" [routerLink]="['/bet/delete', bet._id]">Delete</button>
           </td>
-      </tr>
+        </tr>
       </tbody>
 
       <tbody *ngIf="bet$ | async as bet">
-      <tr class="flex-table row" role="rowgroup">
-        <td colspan="8" style="text-align: center;" class="flex-row" role="cell" *ngIf="bet.length === 0">Coming soon!</td>
-      </tr>
+        <tr *ngIf="authService.isAdmin()" class="flex-table row" role="rowgroup">
+          <td colspan="8" style="text-align: center;" class="flex-row" role="cell" *ngIf="bet.length === 0">Coming soon!</td>
+        </tr>
+
+        <tr *ngIf="!authService.isAdmin()" class="flex-table row" role="rowgroup">
+          <td colspan="7" style="text-align: center;" class="flex-row" role="cell" *ngIf="bet.length === 0">Coming soon!</td>
+        </tr>
       </tbody>
     </table>
   </div>
-</ng-template>
-<ng-template [ngIf]="!authService.isAdmin()">
-  <div class="shell">
-    <table class="table-container" width="100%" role="table" aria-label="Destinations">
-      <caption>History Predictions</caption>
 
-      <thead>
-      <tr class="flex-table header" role="rowgroup">
-        <th class="flex-row first" role="columnheader">Date</th>
-
-        <th class="flex-row" role="columnheader">Home</th>
-
-        <th class="flex-row" role="columnheader">Match</th>
-
-        <th class="flex-row" role="columnheader">Away</th>
-
-        <th class="flex-row" role="columnheader">Prediction</th>
-
-        <th class="flex-row" role="columnheader">Odd</th>
-
-        <th class="flex-row" role="columnheader">Result</th>
-      </tr>
-      </thead>
-
-      <tbody *ngFor="let bet of (bet$ | async)">
-      <tr class="flex-table row" role="rowgroup" *ngIf="!!bet.isFinished">
-        <td class="flex-row first" role="cell">{{bet.date | date: 'dd.MM.yyyy'}}</td>
-
-        <td class="flex-row" role="cell">{{bet.homeTeam}}</td>
-
-        <td class="flex-row" role="cell">{{bet.result}}</td>
-
-        <td class="flex-row" role="cell">{{bet.awayTeam}}</td>
-
-        <td class="flex-row" role="cell">{{bet.prediction}}</td>
-
-        <td class="flex-row" role="cell">{{bet.odd}}</td>
-
-        <td class="flex-row" role="cell">{{bet.resultBet}}</td>
-      </tr>
-      </tbody>
-
-      <tbody *ngIf="bet$ | async as bet">
-      <tr class="flex-table row" role="rowgroup">
-        <td colspan="7" style="text-align: center;" class="flex-row" role="cell" *ngIf="bet.length === 0">Coming soon!</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</ng-template>
   <div class="push"></div>
 </div>
