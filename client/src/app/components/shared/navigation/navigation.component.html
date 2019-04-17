@@ -12,6 +12,7 @@
       <a mat-list-item *ngIf="!authService.isAuthenticated()" [routerLink]="['/auth/login']"><mat-icon>input</mat-icon> Login</a>
       <a mat-list-item *ngIf="authService.isAdmin()" [routerLink]="['/bet/create']"><mat-icon>create</mat-icon> Create</a>
       <a mat-list-item *ngIf="authService.isAuthenticated()" [routerLink]="['/bet/history']"><mat-icon>history</mat-icon> History</a>
+      <a mat-list-item *ngIf="authService.isAuthenticated()" target="_blank" href="https://www.livescore.com/"><mat-icon>score</mat-icon>Livescore</a>
       <a mat-list-item *ngIf="authService.isAuthenticated()" (click)="logout()"><mat-icon>exit_to_app</mat-icon> Logout</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -37,6 +38,7 @@
         <a mat-list-item *ngIf="!authService.isAuthenticated()" [routerLink]="['/auth/login']" routerLinkActive="active">Login</a>
         <a mat-list-item *ngIf="authService.isAdmin()" [routerLink]="['/bet/create']" routerLinkActive="active">Create</a>
         <a mat-list-item *ngIf="authService.isAuthenticated()" [routerLink]="['/bet/history']" routerLinkActive="active">History</a>
+        <a mat-list-item *ngIf="authService.isAuthenticated()" target="_blank" href="https://www.livescore.com/">Livescore</a>
         <a mat-list-item *ngIf="authService.isAuthenticated()" (click)="logout()">Logout</a>
       </span>
     </mat-toolbar>
