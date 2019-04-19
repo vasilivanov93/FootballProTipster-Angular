@@ -2,16 +2,16 @@
 
 Documentation:
 
-I. Public Part
+I. Public Part  
 The user has access to home (intro with a greeting), register and login form.
 
-II. Private Part (User Area)
+II. Private Part (User Area)  
 The user has access to home for authentication users, history and logout. 
   * On the home page there are site information, static photos for bookmakers and football divisions,
 and dynamic information for Daily predictions, table with the last five predictions and Contact form.
   * History page represets a table with all finished predictions.
 
-III. Administration Part
+III. Administration Part  
 The admin has access to home, create, history for admin and logout.  
   * The home page is the same as for authentication users.
   * Create is form for creating a football prediction (home team, away team, prediction and odd).
