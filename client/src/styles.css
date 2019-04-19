@@ -297,7 +297,7 @@ th {
   .create,
   .edit,
   .delete {
-    min-height: calc(100vh - 110px);
+    min-height: calc(100vh - 106px);
   }
 }
 

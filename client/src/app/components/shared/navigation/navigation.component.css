@@ -48,3 +48,7 @@ mat-nav-list mat-icon {
 .logo .img-container {
   width: 65%;
 }
+
+.mat-list-item {
+  cursor: pointer;
+}

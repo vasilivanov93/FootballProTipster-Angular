@@ -20,3 +20,17 @@
   background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../../../../assets/images/intro--home.jpg") no-repeat top center;
   background-size: cover;
 }
+
+@media (max-width: 610px) {
+  .intro__inner {
+    min-height: calc(100vh - 106px);
+  }
+
+  .intro__title {
+    font-size: 38px;
+  }
+
+  .intro__entry {
+    font-size: 16px;
+  }
+}
